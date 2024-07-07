@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp7m1nttes3e0"]
+
+[ext_resource type="PackedScene" uid="uid://k7o647diohhy" path="res://character/hero.tscn" id="1_eucb6"]
+[ext_resource type="Texture2D" uid="uid://cn4oirjcwkumd" path="res://character/sprites/square.jpg" id="2_r2lb3"]
+
+[node name="overWorld" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_eucb6")]
+
+[node name="reference" type="Sprite2D" parent="."]
+position = Vector2(121, -3)
+texture = ExtResource("2_r2lb3")
