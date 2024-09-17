@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gh6gllwt7nnw"]
+
+[ext_resource type="Script" path="res://general/general.gd" id="1_pvkmd"]
+
+[node name="general" type="Node"]
+script = ExtResource("1_pvkmd")

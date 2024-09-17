@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3as2dneq7ajn"]
+
+[ext_resource type="Texture2D" uid="uid://03vf8mwue7dg" path="res://worlds/Solaria Demo Update 01.png" id="1_jrqcc"]
+[ext_resource type="Script" path="res://worlds/tree.gd" id="1_s07xa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0g7in"]
+radius = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtgca"]
+radius = 17.0
+height = 44.0
+
+[node name="tree" type="StaticBody2D"]
+scale = Vector2(1.5, 1.5)
+input_pickable = true
+script = ExtResource("1_s07xa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_0g7in")
+debug_color = Color(0, 0.490196, 0.980392, 0.494118)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+z_index = 2
+z_as_relative = false
+rotation = 3.14159
+shape = SubResource("CapsuleShape2D_mtgca")
+one_way_collision = true
+one_way_collision_margin = 128.0
+debug_color = Color(0.656913, 0.518639, 0, 0.247059)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 18)
+texture = ExtResource("1_jrqcc")
+region_enabled = true
+region_rect = Rect2(116.663, 37.4688, 38.6696, 8.06745)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(0, -4)
+texture = ExtResource("1_jrqcc")
+region_enabled = true
+region_rect = Rect2(116.663, 0.0536461, 38.6696, 37.866)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
