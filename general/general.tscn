@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://gh6gllwt7nnw"]
+[gd_scene load_steps=5 format=3 uid="uid://gh6gllwt7nnw"]
 
 [ext_resource type="Script" path="res://general/general.gd" id="1_pvkmd"]
 
+[sub_resource type="Gradient" id="Gradient_ofayx"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.410714, 0.802455, 0.910714)
+colors = PackedColorArray(0, 0, 1, 1, 0, 0.847059, 0, 1, 0.404511, 0.404511, 0.404511, 1, 1, 1, 1, 1)
+metadata/_snap_count = 14
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k810o"]
+noise_type = 0
+seed = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4bp7j"]
+normalize = false
+color_ramp = SubResource("Gradient_ofayx")
+noise = SubResource("FastNoiseLite_k810o")
+
 [node name="general" type="Node"]
 script = ExtResource("1_pvkmd")
+heigh_perlin = SubResource("NoiseTexture2D_4bp7j")

@@ -7,10 +7,11 @@
 
 [node name="overWorld" type="Node2D"]
 script = ExtResource("1_g4by6")
-chunk = ExtResource("4_dqlqu")
 
 [node name="hero" parent="." instance=ExtResource("1_eucb6")]
 z_index = 2
 
 [node name="tilemap" parent="." instance=ExtResource("3_x0f73")]
 layer_1/z_index = -1
+
+[node name="Area2D" parent="." instance=ExtResource("4_dqlqu")]

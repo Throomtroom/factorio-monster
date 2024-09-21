@@ -1,10 +1,6 @@
 extends Node
 
-var moisture = FastNoiseLite.new()
-var temperature = FastNoiseLite.new()
-var altitude =FastNoiseLite.new()
+@export var heigh_perlin : NoiseTexture2D
 
 func _ready() -> void:
-	moisture.seed = randi()
-	temperature.seed = randi()
-	altitude.seed = randi()
+	heigh_perlin.noise.seed = randi()
